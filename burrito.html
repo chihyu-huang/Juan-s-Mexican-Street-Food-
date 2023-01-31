@@ -1,0 +1,76 @@
+
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+	<head>
+		
+		<meta charset="UTF-8"> 
+		
+		<title>burrito</title>
+		
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="BB2.css">	
+		<script>
+			function validateForm(){
+				var x = document.forms["myForm"]["UserName"].value;
+				var y = document.forms["myForm"]["passwd"].value;
+				
+				if (x == null || x == ""){
+					alert("Username must be filled out");
+				return false;}
+				else if (y == null || y == ""){
+					alert("Password must be filled out");
+				return false;
+			  }
+			}
+		</script> 
+	
+
+
+		
+	</head>
+
+	<body>
+	
+		
+		<header>
+			<h1>  HOLA! Welcome to Juan’s Mexican Street Food™ Order System</h1>
+		</header>
+		
+		<main>
+				<div id="m1">
+				<img src="burrito2.jpg" alt="burrito2" style="height:100%" id="img1">
+				</div>
+				
+				<div id="m2">
+				<form name="myForm" id="f1" style="font-size:25px"
+					action="page2.html" onsubmit="return validateForm()">
+				<table>
+				<tr>
+				<td><b>Log in to order!</b></tr>
+				
+				<td>Username: <input type="text" placeholder="Enter Username"
+								name="UserName" size="20" required ></tr>
+				
+				<td>Password: <input type="password" placeholder="Enter Password"
+								title="Password must contain 6 characters with at least 1 upper case
+										, 1 lower case and 1 number."
+								pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{6,}$" 
+								name="passwd" size="20" maxlength="11" required></tr>
+				</table>
+				
+				<input type="image" src="wrap.png" id="img2" alt="wrap" style="height:100px">
+				
+				</form>
+				</div>
+		</main>	
+		<footer>COPYRIGHT TO JOYYYY
+		<a href="page1.html"><img src="home.png" style="height:30px; float:right; margin:10px"></a>
+		<a href="page1.html"><img src="arrow-left.png" style="height:30px; float:left; margin:10px"></a></footer>
+		
+	</body>
+
+</html>

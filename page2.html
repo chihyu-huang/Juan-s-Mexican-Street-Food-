@@ -1,0 +1,151 @@
+
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+	<head>
+		
+		<meta charset="UTF-8"> 
+		
+		<title>page2</title>
+		
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<link rel="stylesheet" href="BB2.css">	
+
+		<script>
+			function Size_alert(){
+				var x = document.forms["myForm"]["size"].value;
+				if (x == "17"){
+					alert("Supersize is so big that may harm your health");
+					return false;
+			  }
+			}
+			
+			function calcFunction(){
+				var x = document.forms["myForm"]["size"].value;
+				var y = document.forms["myForm"]["piece"].value;
+				var code = document.forms["myForm"]["code"].value;
+				var cost = x * y;
+				
+				if (code == "mextexgood"){
+					cost = (cost*0.865).toFixed(2);;
+					document.getElementById("cost").innerHTML="Total cost = €"+ cost;
+					alert("Congrats! You've got 13.5% off on this check!");
+					}
+				
+				else{
+					document.getElementById("cost").innerHTML="Total cost = €"+ cost;
+					
+				return false;
+				}
+			}
+			
+			function validateForm(){
+				var x = document.forms["myForm"]["size"].value;
+				var y = document.forms["myForm"]["piece"].value;
+				
+				if (x == null || x == ""){
+					alert("You must choose the size");
+				return false;}
+				else if (y == null || y == ""){
+					alert("You must fill out piece");
+				return false;
+			  }
+			}
+		</script> 
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>  HOLA! Welcome to Juan’s Mexican Street Food™ Order System</h1>
+		</header>
+		
+		<main>
+			<div id="m1">
+				<img src="burrito4.jpg" alt="burrito4" style="height:100%" id="img1">
+			</div>
+				
+			<div id="m2">
+				<form id="f1" style="position: relative; top:0%;">
+				<h3>We provide 3 different sizes of burrito.</h3>
+				<table border="1" style="margin-left:35px">
+					<tr>
+						<th>SIZE</th>
+						<th>PRICE</th>
+					</tr>
+					<tr>
+						<td>Large</td>
+						<td> €5</td>
+					</tr>
+					<tr>
+						<td>Extra-Large</td>
+						<td> €7.5</td>
+					</tr>
+					<tr>
+						<td>Supersize</td>
+						<td> €17</td>
+					</tr>
+				</table>
+				</form>
+
+				<form name="myForm" action="#" onsubmit="return Size_alert()"
+					id="f1" style="position: relative; top:0%; font-size:18px">
+				
+				
+				<table>
+				<tr><b>CHOOSE SIZE AND PIECES</b></tr>
+				</br>
+					<tr>Size:</tr>
+					<tr>
+						<select name = "size" required >
+							<option value = "5">Large</option>
+							<option value = "7.5" >Extra Large</option>
+							<option value = "17">Supersize</option>	
+						</select>	
+					</tr>
+					<br>
+					<tr>Pieces(1-20):</tr>
+					<input type="number" placeholder="1" 
+							id="piece" name="piece"
+							min="1" max="50" required >
+					
+					<br>
+					<tr>Discount Code:</tr>
+					<input type="text" id="code">
+					
+					<br>
+					
+					<button onclick="calcFunction()">
+					Calculate Total / Apply Discount Code
+					<img src="bbb.jpg" style="height:20px">
+					</button>
+					<p>
+					<p id="cost">Total cost = </p>
+					
+				</form>
+			
+					<form name="myForm2" action="page3.html" onsubmit="return validateForm()">	
+					<input type="image" src="wrap.png" alt="wrap" style="height:50px">
+					</form>
+				
+				
+					
+				
+				</table>
+				
+				
+				
+			</div>
+		</main>	
+		<footer>COPYRIGHT TO JOYYYY
+		<a href="page1.html"><img src="home.png" style="height:30px; float:right; margin:10px"></a>
+		<a href="burrito.html"><img src="arrow-left.png" style="height:30px; float:left; margin:10px"></a></footer>
+
+	</body>
+
+</html>
